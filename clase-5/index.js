@@ -86,8 +86,8 @@ function crearPersona() {
     return OBJETOPERSONA
 }
 
-let personaUno = crearPersona()
-personaUno.saludar()
+let personaOne = crearPersona()
+personaOne.saludar()
 
 
 function persona(nombre, apellido, edad, pais, ciudad, esDesarrollador) {
@@ -103,13 +103,13 @@ function persona(nombre, apellido, edad, pais, ciudad, esDesarrollador) {
     this.nombreCompleto = () => this.nombre + " " + this.apellido
 }
 
-const PERSONAUNO = new persona("Juan", "Rodriguez", 30, "Argentina", "La Plata", true)
+const PERSONAONE = new persona("Juan", "Rodriguez", 30, "Argentina", "La Plata", true)
 
-PERSONAUNO.saludar()
-console.log(PERSONAUNO.nombreCompleto);
+PERSONAONE.saludar()
+console.log(PERSONAONE.nombreCompleto);
 
 
-JS es orientado a prototipos, no a objetos
+// JS es orientado a prototipos, no a objetos
 
 class persona {
     constructor(nombre, apellido, edad, pais, ciudad, esDesarrollador) {
