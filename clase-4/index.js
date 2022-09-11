@@ -29,7 +29,7 @@ mostrar(resultado)
 
 
 
-Calculadora
+// Calculadora
 function calculadora(primerNumero, segundoNumero, operacion) {
     switch (operacion) {
         case "+":
@@ -49,6 +49,7 @@ function calculadora(primerNumero, segundoNumero, operacion) {
             break
     }
 }
+
 console.log(calculadora(70000,30,"/"));
 
 
