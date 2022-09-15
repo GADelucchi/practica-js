@@ -11,7 +11,7 @@ const PERSONA = {
 
 console.log(PERSONA);
 
-// alert(PERSONA)  // no funcionará porque en alewrt se saca texto
+// alert(PERSONA)  // no funcionará porque en alert se saca texto
 
 console.log("Nombre persona " + PERSONA.nombre)  // Estatico o Hardcode
 console.log("Edad persona " + PERSONA["edad"])  // Forma más dinámica
