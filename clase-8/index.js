@@ -127,8 +127,11 @@ console.log(parrafee);
 let contenedor = document.querySelector(`#contenedor`)
 console.log(contenedor);
 
-parrafee = document.querySelector(`.texto`)
-console.log(parrafee);
-
 let contenedoress = document.querySelectorAll(`div`)
 console.log(contenedoress);
+
+
+
+// Modificar el CSS desde JS
+parrafee = document.querySelector(`.texto`)
+console.log(parrafee);
