@@ -14,6 +14,39 @@
     <div class="container p-3">
         <div class="row">
             <div class="col-md-6">
+                <button class="btn btn-warning" id="limpiarStorage">
+                    Limpiar Storage
+                </button>
+            </div>
+            <div class="col-md-6">
+                <div id="contenedorUsuario" hidden>
+                    <p id="textoUsuario">
+                        Bienvenido: 
+                    </p>
+                </div>
+                <div id="contenedorIdentificacion">
+                    <h2>Identificate</h2>
+                    <form id="formularioIdentificacion">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div>
+                                    <label class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="inputUsuario" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-flex align-items-end">
+                                <button type="submit" class="btn btn-secondary">
+                                    Identificarse
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
                 <div id="contenedorProductos" class="row"></div>
             </div>
             <div class="col-md-6">

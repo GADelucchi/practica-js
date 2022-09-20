@@ -1,4 +1,11 @@
 let productos = [];
+let usuario
+
+let formularioIdentificacion
+let contenedorIdentificacion
+let contenedorUsuario
+let textoUsuario
+let btnLimpiarStorage;
 
 let formulario;
 let inputId;
@@ -28,10 +35,39 @@ function inicializarElementos() {
     inputPrecioVenta = document.getElementById("inputPrecioVenta");
     inputCantidad = document.getElementById("inputCantidad");
     contenedorProductos = document.getElementById("contenedorProductos");
+    btnLimpiarStorage = document.getElementById("limpiarStorage")
+    formularioIdentificacion = document.getElementById("formularioIdentificacion")
+
+    contenedorIdentificacion = document.getElementById("contenedorIdentificacion")
+    contenedorUsuario = document.getElementById("contenedorUsuario")
+    textoUsuario = document.getElementById("textoUsuario")
+
 }
 
 function inicializarEventos() {
     formulario.onsubmit = (event) => validarFormulario(event);
+    formularioIdentificacion.onsubmit = (event) => identificarUsuario(event)
+    btnLimpiarStorage.onclick = eliminarStorage
+}
+
+function identificarUsuario() {
+    localStorage.clear
+    productos = []
+    formularioIdentificacion.reset()
+    actualizarUsuarioStorage()
+    mostrarTextoUsuario()
+}
+
+function mostrarTextoUsuario() {
+    contenedorIdentificacion.hidden = true
+    contenedorUsuario.hidden = false
+    textoUsuario.innerHTML += `${usuario}`
+}
+
+function eliminarStorage() {
+    localStorage.clear()
+    productos = []
+    pintarProductos()
 }
 
 function validarFormulario(event) {
@@ -54,7 +90,7 @@ function validarFormulario(event) {
 
         productos.push(producto);
         formulario.reset();
-
+        actualizarProductosStorage()
         pintarProductos();
     } else {
         alert("El id ya existe");
@@ -69,6 +105,7 @@ function eliminarProducto(idProducto) {
 
     productos.splice(indiceBorrar, 1);
     columnaBorrar.remove();
+    actualizarProductosStorage()
 }
 
 function pintarProductos() {
@@ -108,9 +145,24 @@ function pintarProductos() {
     });
 }
 
+function actualizarProductosStorage() {
+    let productosJSON = JSON.stringify(productos)
+    localStorage.setItem("productos", productosJSON)
+}
+
+function obtenerProductosStorage() {
+    let productosJSON = localStorage.getItem("productos")
+
+    if(productosJSON){
+        productos = JSON.parse(productosJSON)
+        pintarProductos();
+    }
+}
+
 function main() {
     inicializarElementos();
     inicializarEventos();
+    obtenerProductosStorage()
 }
 
 main();
