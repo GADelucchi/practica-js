@@ -64,6 +64,12 @@ function mostrarTextoUsuario() {
     textoUsuario.innerHTML += `${usuario}`
 }
 
+function mostrarFormularioIdentificacion() {
+    contenedorIdentificacion.hidden = false;
+    contenedorUsuario.hidden = true;
+    textoUsuario.innerHTML = ``;
+}
+
 function eliminarStorage() {
     localStorage.clear()
     productos = []
@@ -153,7 +159,7 @@ function actualizarProductosStorage() {
 function obtenerProductosStorage() {
     let productosJSON = localStorage.getItem("productos")
 
-    if(productosJSON){
+    if (productosJSON) {
         productos = JSON.parse(productosJSON)
         pintarProductos();
     }
